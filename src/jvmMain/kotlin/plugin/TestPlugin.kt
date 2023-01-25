@@ -1,5 +1,6 @@
 package plugin
 
+import Plugin
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -19,13 +20,4 @@ class TestPlugin : Plugin {
     }
 }
 
-interface Plugin {
-    fun getName(): String
 
-    fun getAuthor(): String
-
-    fun getDescription(): String
-
-    @Composable
-    fun getUi()
-}
