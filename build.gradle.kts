@@ -5,12 +5,16 @@ plugins {
     id("org.jetbrains.compose")
 }
 
-group = "indi.jyjdal.toolbox"
+group = "net.jyjdal.toolbox"
 version = "1.0-SNAPSHOT"
 
 repositories {
-    google()
-    mavenCentral()
+    maven {
+        url = uri("https://maven.aliyun.com/repository/google")
+    }
+    maven {
+        url = uri("https://maven.aliyun.com/repository/central")
+    }
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
@@ -25,6 +29,7 @@ kotlin {
         @Suppress("UNUSED_VARIABLE") val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
+                implementation("org.jetbrains.kotlin:kotlin-reflect")
             }
         }
         @Suppress("UNUSED_VARIABLE") val jvmTest by getting
